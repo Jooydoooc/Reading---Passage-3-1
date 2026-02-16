@@ -1,0 +1,303 @@
+.highlight {
+            background-color: rgb(254 240 138);
+        }
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Enhanced bullet points for flow chart */
+        .flow-chart-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .flow-chart-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .flow-chart-list li:before {
+            content: '●';
+            color: #DC2626;
+            font-size: 16px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            line-height: 1.5;
+        }
+
+        #intro-splash {
+            position: fixed;
+            inset: 0;
+            z-index: 4000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            color: #f9fafb;
+            background: radial-gradient(circle at center, #0f172a 0%, #020617 70%);
+        }
+
+        .intro-splash-title {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        .intro-splash-loader {
+            display: flex;
+            gap: 8px;
+        }
+
+        .intro-splash-loader span {
+            width: 9px;
+            height: 9px;
+            border-radius: 9999px;
+            background: #facc15;
+            animation: introPulse 1s ease-in-out infinite;
+        }
+
+        .intro-splash-loader span:nth-child(2) { animation-delay: 0.15s; }
+        .intro-splash-loader span:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes introPulse {
+            0%, 100% { transform: translateY(0); opacity: 0.35; }
+            50% { transform: translateY(-5px); opacity: 1; }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                opacity: 0.4;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+
+        @keyframes lightningArc1 {
+            0%, 100% { opacity: 0; }
+            20% { opacity: 0; }
+            21% { opacity: 0.8; }
+            22% { opacity: 0.2; }
+            23% { opacity: 0.9; }
+            24% { opacity: 0; }
+            60% { opacity: 0; }
+            61% { opacity: 0.7; }
+            62% { opacity: 0.1; }
+            63% { opacity: 0.6; }
+            64% { opacity: 0; }
+        }
+
+        @keyframes lightningArc2 {
+            0%, 100% { opacity: 0; }
+            40% { opacity: 0; }
+            41% { opacity: 0.9; }
+            42% { opacity: 0.15; }
+            43% { opacity: 0.7; }
+            44% { opacity: 0; }
+            85% { opacity: 0; }
+            86% { opacity: 0.6; }
+            87% { opacity: 0.1; }
+            88% { opacity: 0.8; }
+            89% { opacity: 0; }
+        }
+
+        @keyframes lightningArc3 {
+            0%, 100% { opacity: 0; }
+            10% { opacity: 0; }
+            11% { opacity: 0.7; }
+            12% { opacity: 0.1; }
+            13% { opacity: 0.8; }
+            14% { opacity: 0; }
+            50% { opacity: 0; }
+            51% { opacity: 0.6; }
+            52% { opacity: 0.2; }
+            53% { opacity: 0.9; }
+            54% { opacity: 0; }
+        }
+
+        @keyframes lightningArc4 {
+            0%, 100% { opacity: 0; }
+            30% { opacity: 0; }
+            31% { opacity: 0.8; }
+            32% { opacity: 0.1; }
+            33% { opacity: 0.7; }
+            34% { opacity: 0; }
+            70% { opacity: 0; }
+            71% { opacity: 0.9; }
+            72% { opacity: 0.15; }
+            73% { opacity: 0.6; }
+            74% { opacity: 0; }
+        }
+
+        @keyframes logoElectrocute {
+            0%, 100% {
+                filter: drop-shadow(0 0 8px rgba(30,144,255,0.3)) drop-shadow(0 0 15px rgba(0,71,171,0.2));
+            }
+            21%, 23%, 41%, 43%, 51%, 53%, 61%, 63%, 71%, 73%, 86%, 88% {
+                filter: drop-shadow(0 0 12px rgba(80,160,255,0.5)) drop-shadow(0 0 25px rgba(30,144,255,0.4)) brightness(1.15);
+            }
+            22%, 42%, 52%, 62%, 72%, 87% {
+                filter: drop-shadow(0 0 18px rgba(120,180,255,0.6)) drop-shadow(0 0 35px rgba(30,144,255,0.5)) brightness(1.25);
+            }
+        }
+
+        @keyframes plasmaRing {
+            0%, 100% {
+                box-shadow: inset 0 0 10px rgba(30,144,255,0.15), 0 0 8px rgba(30,144,255,0.1);
+            }
+            21%, 23%, 51%, 53%, 86%, 88% {
+                box-shadow: inset 0 0 15px rgba(80,160,255,0.3), 0 0 15px rgba(30,144,255,0.25);
+            }
+            22%, 52%, 87% {
+                box-shadow: inset 0 0 20px rgba(100,170,255,0.4), 0 0 25px rgba(60,140,255,0.35);
+            }
+        }
+
+        .plasma-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 115px;
+            height: 115px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            animation: plasmaRing 3s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .lightning-arc {
+            position: absolute;
+            z-index: 2;
+        }
+
+        .electric-logo {
+            animation: logoElectrocute 3s ease-in-out infinite;
+        }
+
+        .logo-link {
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-link .electric-logo {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        #cursor-lightning-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 3500;
+        }
+
+        .electric-logo.zapping {
+            filter: drop-shadow(0 0 20px rgba(100,200,255,1)) drop-shadow(0 0 35px rgba(60,160,255,0.8)) brightness(1.3) !important;
+        }
+
+        .plasma-ring.zapping {
+            animation: plasmaRingZap 0.15s ease-in-out infinite !important;
+            box-shadow: inset 0 0 35px rgba(100,200,255,0.9), 0 0 45px rgba(30,144,255,0.8) !important;
+        }
+
+        @keyframes plasmaRingZap {
+            0%, 100% {
+                box-shadow: inset 0 0 30px rgba(100,200,255,0.9), 0 0 40px rgba(30,144,255,0.8);
+            }
+            50% {
+                box-shadow: inset 0 0 45px rgba(150,220,255,1), 0 0 60px rgba(60,160,255,1);
+            }
+        }
+
+        @keyframes curveStrike1 {
+            0%, 100% { opacity: 0; }
+            18% { opacity: 0; }
+            19% { opacity: 1; }
+            20% { opacity: 0.2; }
+            21% { opacity: 0.9; }
+            22% { opacity: 0.1; }
+            23% { opacity: 0.7; }
+            24% { opacity: 0; }
+        }
+
+        @keyframes curveStrike2 {
+            0%, 100% { opacity: 0; }
+            48% { opacity: 0; }
+            49% { opacity: 1; }
+            50% { opacity: 0.15; }
+            51% { opacity: 0.85; }
+            52% { opacity: 0.1; }
+            53% { opacity: 0.6; }
+            54% { opacity: 0; }
+        }
+
+        @keyframes curveStrike3 {
+            0%, 100% { opacity: 0; }
+            78% { opacity: 0; }
+            79% { opacity: 1; }
+            80% { opacity: 0.2; }
+            81% { opacity: 0.9; }
+            82% { opacity: 0.15; }
+            83% { opacity: 0.7; }
+            84% { opacity: 0; }
+        }
+
+        @keyframes impactFlash1 {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            19%, 23% { opacity: 1; transform: scale(1); }
+            20%, 22% { opacity: 0.3; transform: scale(1.2); }
+            21% { opacity: 0.9; transform: scale(0.8); }
+            24% { opacity: 0; transform: scale(0); }
+        }
+
+        @keyframes impactFlash2 {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            49%, 53% { opacity: 1; transform: scale(1); }
+            50%, 52% { opacity: 0.3; transform: scale(1.2); }
+            51% { opacity: 0.9; transform: scale(0.8); }
+            54% { opacity: 0; transform: scale(0); }
+        }
+
+        @keyframes impactFlash3 {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            79%, 83% { opacity: 1; transform: scale(1); }
+            80%, 82% { opacity: 0.3; transform: scale(1.2); }
+            81% { opacity: 0.9; transform: scale(0.8); }
+            84% { opacity: 0; transform: scale(0); }
+        }
+
+        .curve-strike {
+            position: absolute;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .impact-flash {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, rgba(200,230,255,1) 0%, rgba(100,180,255,0.7) 30%, rgba(60,140,255,0.3) 60%, transparent 80%);
+            border-radius: 50%;
+            z-index: 4;
+        }
+
+        #premium-info-content::-webkit-scrollbar {
+            display: none;
+        }
